@@ -49,11 +49,6 @@ const errors = validationResult(req);
 
    const { name, email, number, address } = req.body
 
-      if(name && number && email && address == 0 ){
-        return res.json(422, {
-            message: "Invalid username or password"
-        });
-      }
     
             /// check if the customer exists or not 
         con.connect(function(error){
@@ -63,9 +58,9 @@ const errors = validationResult(req);
                     message: 'Error Connecting to the database'
                 })
             }
-            var search = "SELECT email FROM customer where email = ?";
+            var search = "SELECT number FROM customer where number = ?";
 
-            const search_query = mysql2.format(search,[email])
+            const search_query = mysql2.format(search,[number])
             con.query(search_query,function(error,result){
                 if(error){
                     console.log(error);
@@ -75,8 +70,6 @@ const errors = validationResult(req);
                 }
 
                 if (result.length != 0) {
-                    
-                
                     return res.json(409,{
                         message: '------> User already exists'
                     }) 
