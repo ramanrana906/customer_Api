@@ -1,0 +1,20 @@
+{
+  "name": "customer_api",
+  "version": "1.0.0",
+  "description": "A customer Api to add new customers by the admin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raman Rana",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "rotating-file-stream": "^3.0.4"
+  }
+}
